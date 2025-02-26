@@ -7,10 +7,16 @@ function setupMobileMenu() {
     const menuToggle = document.querySelector('.menu-toggle');
     const navMenu = document.querySelector('.nav-menu');
     
-    if (menuToggle) {
+    if (menuToggle && navMenu) {
         menuToggle.addEventListener('click', function() {
             this.classList.toggle('active');
             navMenu.classList.toggle('active');
+            console.log('Menu toggle clicado');
+        });
+    } else {
+        console.error('Menu móvel não encontrado:', { 
+            menuToggle: !!menuToggle, 
+            navMenu: !!navMenu 
         });
     }
 }
@@ -48,7 +54,7 @@ function setupScrollAnimation() {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('animated');
+                entry.target.classList.add('show');
             }
         });
     }, { threshold: 0.1 });
@@ -143,17 +149,6 @@ function setupCounters() {
     });
 }
 
-// Exportar funções para serem usadas no main.js
-window.ComponentsFunctions = {
-    setupMobileMenu,
-    setupScrollSpy,
-    setupScrollAnimation,
-    setupBackToTop,
-    setupContactForm,
-    setupProjectCards,
-    setupCounters,
-    setupInteractiveTimeline
-};
 // Função para configurar a linha temporal interativa
 function setupInteractiveTimeline() {
     const timelinePoints = document.querySelectorAll('.timeline-point');
@@ -173,12 +168,15 @@ function setupInteractiveTimeline() {
         // Esconder todos os conteúdos
         timelineContents.forEach(content => {
             content.classList.remove('active');
+            // Importante: garantir que o conteúdo esteja completamente oculto
+            content.style.display = 'none';
         });
         
-        // Mostrar o conteúdo correspondente
+        // Mostrar apenas o conteúdo correspondente
         const activeContent = document.getElementById(`content-${year}`);
         if (activeContent) {
             activeContent.classList.add('active');
+            activeContent.style.display = 'block';
         }
     }
     
@@ -194,3 +192,28 @@ function setupInteractiveTimeline() {
         activatePoint(timelinePoints[0]);
     }
 }
+
+// Funções para o modo escuro
+function fixDarkModeTimeline() {
+    // Implementação para corrigir elementos específicos no modo escuro
+    console.log('Ajustando timeline para modo escuro');
+}
+
+function resetLightMode() {
+    // Implementação para restaurar elementos no modo claro
+    console.log('Restaurando modo claro');
+}
+
+// Exportar funções para serem usadas no main.js
+window.ComponentsFunctions = {
+    setupMobileMenu,
+    setupScrollSpy,
+    setupScrollAnimation,
+    setupBackToTop,
+    setupContactForm,
+    setupProjectCards,
+    setupCounters,
+    setupInteractiveTimeline,
+    fixDarkModeTimeline,
+    resetLightMode
+};

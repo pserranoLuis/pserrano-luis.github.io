@@ -39,9 +39,9 @@ function smoothScroll() {
     });
 }
 
-// Função para inicializar o modo escuro (Dark Mode) - Corrigida
+// Função para inicializar o modo escuro (Dark Mode)
 function setupDarkMode() {
-    const darkModeToggle = document.getElementById('dark-mode-toggle');
+    const darkModeToggle = document.getElementById('floating-dark-mode');
     const body = document.body;
     
     // Verificar preferência salva
@@ -51,7 +51,8 @@ function setupDarkMode() {
     if (isDarkMode) {
         body.classList.add('dark-mode');
         if (darkModeToggle) {
-            darkModeToggle.checked = true;
+            darkModeToggle.querySelector('i').classList.remove('fa-moon');
+            darkModeToggle.querySelector('i').classList.add('fa-sun');
         }
         
         // Aplicar correções para o modo escuro
@@ -64,11 +65,16 @@ function setupDarkMode() {
     
     // Configurar o alternador de modo escuro
     if (darkModeToggle) {
-        darkModeToggle.addEventListener('change', function() {
-            if (this.checked) {
-                // Ativar modo escuro
-                body.classList.add('dark-mode');
-                localStorage.setItem('darkMode', 'true');
+        darkModeToggle.addEventListener('click', function() {
+            body.classList.toggle('dark-mode');
+            const isDark = body.classList.contains('dark-mode');
+            localStorage.setItem('darkMode', isDark ? 'true' : 'false');
+            
+            // Mudar o ícone
+            const icon = this.querySelector('i');
+            if (isDark) {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
                 
                 // Aplicar correções para o modo escuro
                 if (window.ComponentsFunctions && window.ComponentsFunctions.fixDarkModeTimeline) {
@@ -77,9 +83,8 @@ function setupDarkMode() {
                     }, 100);
                 }
             } else {
-                // Desativar modo escuro
-                body.classList.remove('dark-mode');
-                localStorage.setItem('darkMode', 'false');
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
                 
                 // Restaurar modo claro
                 if (window.ComponentsFunctions && window.ComponentsFunctions.resetLightMode) {
@@ -95,9 +100,7 @@ function setupDarkMode() {
     document.addEventListener('keydown', function(e) {
         if (e.shiftKey && e.key === 'D') {
             if (darkModeToggle) {
-                darkModeToggle.checked = !darkModeToggle.checked;
-                const event = new Event('change');
-                darkModeToggle.dispatchEvent(event);
+                darkModeToggle.click();
             }
         }
     });
@@ -123,8 +126,26 @@ window.addEventListener('load', () => {
     }
 });
 
+// Configurar menu mobile diretamente (solução adicional)
+function initializeMobileMenu() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    
+    if (menuToggle && navMenu) {
+        console.log('Inicializando menu mobile diretamente');
+        menuToggle.addEventListener('click', function() {
+            console.log('Menu toggle clicado diretamente');
+            this.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+    }
+}
+
 // Carregar componentes e inicializar funcionalidades quando a página estiver pronta
 document.addEventListener('DOMContentLoaded', () => {
+    // Inicializar menu mobile diretamente
+    initializeMobileMenu();
+    
     // Em vez de carregar componentes externos, inicialize os componentes diretamente
     if (window.ComponentsFunctions) {
         window.ComponentsFunctions.setupMobileMenu();
@@ -206,11 +227,11 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             
             // Adicionar listener para mudanças no modo
-            const darkModeToggle = document.getElementById('dark-mode-toggle');
+            const darkModeToggle = document.getElementById('floating-dark-mode');
             if (darkModeToggle) {
-                darkModeToggle.addEventListener('change', function() {
+                darkModeToggle.addEventListener('click', function() {
                     setTimeout(() => {
-                        if (this.checked) {
+                        if (document.body.classList.contains('dark-mode')) {
                             fixDarkMode();
                         } else {
                             fixLightMode();
@@ -223,30 +244,22 @@ document.addEventListener('DOMContentLoaded', () => {
     
     document.body.appendChild(script);
 });
-// Adicionar script de depuração para o menu móvel
-const debugScript = document.createElement('script');
-debugScript.textContent = `
-    // Verificar se o menu móvel está funcionando
-    (function() {
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navMenu = document.querySelector('.nav-menu');
-        
-        if (menuToggle && navMenu) {
-            console.log('Menu móvel encontrado e configurado');
-            
-            // Adicionar listener de evento diretamente aqui como backup
-            menuToggle.addEventListener('click', function() {
-                console.log('Menu toggle clicado');
-                this.classList.toggle('active');
-                navMenu.classList.toggle('active');
-            });
-        } else {
-            console.error('Menu móvel não encontrado:', { 
-                menuToggle: !!menuToggle, 
-                navMenu: !!navMenu 
-            });
-        }
-    })();
-`;
 
-document.body.appendChild(debugScript);
+// Script de inicialização do menu mobile
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    
+    if (menuToggle && navMenu) {
+        menuToggle.addEventListener('click', function() {
+            console.log('Menu toggle clicado - script final');
+            this.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+    } else {
+        console.error('Menu mobile não encontrado no script final:', { 
+            menuToggle: !!menuToggle, 
+            navMenu: !!navMenu 
+        });
+    }
+});
