@@ -4,11 +4,11 @@
 
 // Função para configurar o menu móvel
 function setupMobileMenu() {
-    const mobileMenu = document.getElementById('mobile-menu');
+    const menuToggle = document.querySelector('.menu-toggle');
     const navMenu = document.querySelector('.nav-menu');
     
-    if (mobileMenu) {
-        mobileMenu.addEventListener('click', function() {
+    if (menuToggle) {
+        menuToggle.addEventListener('click', function() {
             this.classList.toggle('active');
             navMenu.classList.toggle('active');
         });

@@ -223,3 +223,30 @@ document.addEventListener('DOMContentLoaded', () => {
     
     document.body.appendChild(script);
 });
+// Adicionar script de depuração para o menu móvel
+const debugScript = document.createElement('script');
+debugScript.textContent = `
+    // Verificar se o menu móvel está funcionando
+    (function() {
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        if (menuToggle && navMenu) {
+            console.log('Menu móvel encontrado e configurado');
+            
+            // Adicionar listener de evento diretamente aqui como backup
+            menuToggle.addEventListener('click', function() {
+                console.log('Menu toggle clicado');
+                this.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
+        } else {
+            console.error('Menu móvel não encontrado:', { 
+                menuToggle: !!menuToggle, 
+                navMenu: !!navMenu 
+            });
+        }
+    })();
+`;
+
+document.body.appendChild(debugScript);
