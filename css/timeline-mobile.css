@@ -1,0 +1,37 @@
+/* Solução mais robusta para a timeline em dispositivos móveis */
+@media (max-width: 768px) {
+    /* Usar flexbox para distribuir os pontos uniformemente */
+    .timeline-track {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 10px; /* Adicionar padding horizontal */
+    }
+    
+    /* Redefinir o posicionamento absoluto */
+    .timeline-point {
+        position: relative !important;
+        top: 0 !important;
+        left: auto !important;
+        transform: none !important;
+        width: auto !important;
+        margin: 0 !important;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    /* Ajustar a linha da timeline */
+    .timeline-line {
+        left: 10px;
+        right: 10px;
+        width: auto;
+    }
+    
+    /* Melhorar a visualização do texto */
+    .timeline-year {
+        font-size: 0.75rem;
+        white-space: nowrap;
+        text-align: center;
+    }
+}
