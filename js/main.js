@@ -125,18 +125,13 @@ window.addEventListener('load', () => {
 
 // Carregar componentes e inicializar funcionalidades quando a página estiver pronta
 document.addEventListener('DOMContentLoaded', () => {
-    // Carregar componentes
-    loadComponent('header', 'sections/header.html').then(() => {
-        // Inicializar componentes após o carregamento do cabeçalho
-        if (window.ComponentsFunctions) {
-            window.ComponentsFunctions.setupMobileMenu();
-            window.ComponentsFunctions.setupScrollSpy();
-        }
-        smoothScroll();
-        setupDarkMode();
-    });
-    
-    loadComponent('footer', 'sections/footer.html');
+    // Em vez de carregar componentes externos, inicialize os componentes diretamente
+    if (window.ComponentsFunctions) {
+        window.ComponentsFunctions.setupMobileMenu();
+        window.ComponentsFunctions.setupScrollSpy();
+    }
+    smoothScroll();
+    setupDarkMode();
     
     // Inicializar componentes
     if (window.ComponentsFunctions) {
