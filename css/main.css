@@ -396,3 +396,304 @@ body.dark-mode .timeline-date {
 body.dark-mode .timeline-location {
     color: #aaa;
 }
+/* Styles for CV loading indicator */
+.cv-loading-message {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    color: white;
+    font-size: 18px;
+}
+
+.cv-loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 15px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Estilo para o container do CV temporário */
+.cv-pdf-container {
+    background-color: white;
+    padding: 20px;
+    max-width: 800px;
+    margin: 20px auto;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+/* Estilos do modo escuro */
+body.dark-mode {
+    --bg-color: #121212;
+    --text-color: #ffffff;
+    --card-bg: #1e1e1e;
+    --card-shadow: rgba(0, 0, 0, 0.3);
+    --light-gray: #2a2a2a;
+    --card-border: #444;
+    --section-bg-odd: #121212;
+    --section-bg-even: #1a1a1a;
+    
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* Estilos gerais para o modo escuro */
+body.dark-mode section {
+    background-color: var(--bg-color) !important;
+}
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6,
+body.dark-mode p,
+body.dark-mode li,
+body.dark-mode span:not(.skill-progress),
+body.dark-mode .section-title,
+body.dark-mode .section-subtitle {
+    color: var(--text-color) !important;
+}
+
+/* Navbar no modo escuro */
+body.dark-mode .navbar {
+    background-color: rgba(26, 26, 26, 0.95) !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
+}
+
+body.dark-mode .nav-link {
+    color: #ffffff !important;
+}
+
+body.dark-mode .nav-link:hover {
+    color: var(--primary-color) !important;
+}
+
+body.dark-mode .menu-toggle .bar {
+    background-color: #ffffff !important;
+}
+
+/* Menu móvel no modo escuro */
+body.dark-mode .nav-menu {
+    background-color: #1a1a1a !important;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3) !important;
+}
+
+body.dark-mode .nav-menu.active {
+    left: 0;
+}
+
+/* Cards e containers no modo escuro */
+body.dark-mode .intro-card,
+body.dark-mode .skill-category,
+body.dark-mode .timeline-content-container,
+body.dark-mode .recommendation-card,
+body.dark-mode .contact-container,
+body.dark-mode .project-card {
+    background-color: #1e1e1e !important;
+    border-color: #444 !important;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Skills no modo escuro */
+body.dark-mode .skill-bar {
+    background-color: #444 !important;
+}
+
+body.dark-mode .skill-progress {
+    background-color: var(--primary-color);
+}
+
+body.dark-mode .skill-category h3 {
+    color: var(--primary-color) !important;
+}
+
+/* Timeline no modo escuro */
+body.dark-mode .timeline-line {
+    background-color: #444 !important;
+}
+
+body.dark-mode .timeline-content::-webkit-scrollbar-track {
+    background: #2a2a2a;
+}
+
+body.dark-mode .timeline-content::-webkit-scrollbar-thumb {
+    background: #555;
+}
+
+/* Recomendações no modo escuro */
+body.dark-mode .recommendation-header {
+    border-color: #444 !important;
+}
+
+body.dark-mode .recommendation-signature {
+    border-color: #444 !important;
+}
+
+/* Logos no modo escuro */
+body.dark-mode .logo-img.light-version {
+    display: none !important;
+}
+
+body.dark-mode .logo-img.dark-version {
+    display: block !important;
+}
+
+body:not(.dark-mode) .logo-img.light-version {
+    display: block !important;
+}
+
+body:not(.dark-mode) .logo-img.dark-version {
+    display: none !important;
+}
+
+/* Botão de modo escuro */
+.floating-dark-mode {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.floating-dark-mode:hover {
+    transform: scale(1.1);
+    background-color: #2980b9;
+}
+
+/* Ajustes para dispositivos móveis */
+@media (max-width: 768px) {
+    .floating-dark-mode {
+        bottom: 20px;
+        left: 20px;
+        width: 45px;
+        height: 45px;
+        z-index: 1001;
+    }
+    
+    body.dark-mode .navbar {
+        background-color: #1a1a1a !important;
+    }
+    
+    body.dark-mode .nav-menu {
+        background-color: #1a1a1a !important;
+        left: -100%;
+    }
+    
+    body.dark-mode .nav-menu.active {
+        left: 0;
+    }
+    
+    body.dark-mode .menu-toggle .bar {
+        background-color: #ffffff !important;
+    }
+}
+/* MODO ESCURO - ESTILOS SIMPLIFICADOS */
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+/* Navbar */
+body.dark-mode .navbar {
+    background-color: #1a1a1a !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
+}
+
+body.dark-mode .nav-link {
+    color: #ffffff !important;
+}
+
+body.dark-mode .menu-toggle .bar {
+    background-color: #ffffff !important;
+}
+
+/* Menu mobile */
+body.dark-mode .nav-menu {
+    background-color: #1a1a1a !important;
+}
+
+/* Seções */
+body.dark-mode section {
+    background-color: #121212 !important;
+}
+
+/* Texto */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6,
+body.dark-mode p,
+body.dark-mode li,
+body.dark-mode .section-title,
+body.dark-mode .section-subtitle {
+    color: #ffffff !important;
+}
+
+/* Cards */
+body.dark-mode .intro-card,
+body.dark-mode .skill-category,
+body.dark-mode .timeline-content-container,
+body.dark-mode .recommendation-card,
+body.dark-mode .contact-container {
+    background-color: #1e1e1e !important;
+    border-color: #444 !important;
+}
+
+/* Botão de modo escuro */
+.floating-dark-mode {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    z-index: 1000;
+}
+
+@media (max-width: 768px) {
+    .floating-dark-mode {
+        bottom: 20px;
+        left: 20px;
+        width: 45px;
+        height: 45px;
+    }
+}
