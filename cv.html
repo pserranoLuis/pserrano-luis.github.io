@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luis Serrano - CV</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .cv-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            padding: 40px;
+        }
+        
+        .header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 20px;
+        }
+        
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 30px;
+            border: 3px solid #3498db;
+        }
+        
+        .name-title {
+            flex: 1;
+        }
+        
+        .name {
+            font-size: 28px;
+            color: #3498db;
+            margin-bottom: 5px;
+        }
+        
+        .title {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 10px;
+        }
+        
+        .contact-info {
+            margin-bottom: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        
+        .contact-item i {
+            color: #3498db;
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+        }
+        
+        .section-title {
+            font-size: 20px;
+            color: #3498db;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+        }
+        
+        .experience-item {
+            margin-bottom: 20px;
+        }
+        
+        .job-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .company-period {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+        
+        .company {
+            font-weight: 500;
+        }
+        
+        .period {
+            color: #777;
+            font-style: italic;
+        }
+        
+        .responsibilities {
+            padding-left: 20px;
+            margin-top: 8px;
+        }
+        
+        .responsibilities li {
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+        
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .skill-category {
+            flex: 1 0 45%;
+        }
+        
+        .skill-category h3 {
+            font-size: 16px;
+            margin-bottom: 10px;
+            color: #555;
+        }
+        
+        .skill-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+        
+        .skill-name {
+            font-size: 14px;
+        }
+        
+        .skill-level {
+            display: flex;
+        }
+        
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #3498db;
+            margin-left: 3px;
+        }
+        
+        .dot.empty {
+            background-color: #ddd;
+        }
+        
+        .tools-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .tool-item {
+            background-color: #f0f8ff;
+            padding: 5px 12px;
+            border-radius: 15px;
+            font-size: 13px;
+            border: 1px solid #d6eaf8;
+        }
+        
+        .footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 12px;
+            color: #777;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+        
+        @media print {
+            body {
+                background-color: white;
+                padding: 0;
+            }
+            
+            .cv-container {
+                box-shadow: none;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cv-container">
+        <div class="header">
+            <img src="img/luis.jpg" alt="Luis Serrano" class="profile-img">
+            <div class="name-title">
+                <h1 class="name">Luis Serrano</h1>
+                <h2 class="title">OSS Engineer</h2>
+                <p>Implementation and maintenance of operational support systems, development of technical solutions for telecommunications, and resolution of complex problems in network environments.</p>
+            </div>
+        </div>
+        
+        <div class="contact-info">
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <span>pserrano.luis@gmail.com</span>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <span>+351 934 355 455</span>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Porto Alto, Portugal</span>
+            </div>
+            <div class="contact-item">
+                <i class="fab fa-linkedin"></i>
+                <span>linkedin.com/in/serrano-luis</span>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">Professional Experience</h2>
+            
+            <div class="experience-item">
+                <h3 class="job-title">OSS Engineer</h3>
+                <div class="company-period">
+                    <span class="company">Nokia</span>
+                    <span class="period">September 2022 - Present</span>
+                </div>
+                <p>OSS Engineer for BT and 3Ireland Project</p>
+                <ul class="responsibilities">
+                    <li>Developing comprehensive process documentation and user guides for internal team adoption and end-user implementation</li>
+                    <li>Executing software updates via virtual machine environments for the Vodafone Project initiative</li>
+                    <li>Maintaining detailed documentation of internal and client meetings (BT and MBNL) through structured OneNote repositories</li>
+                    <li>Managing system access reclamation and account updates for departed personnel across projects</li>
+                    <li>Administering compliance audits to facilitate EE's regulatory vetting requirements</li>
+                </ul>
+            </div>
+            
+            <div class="experience-item">
+                <h3 class="job-title">Rollout Manager</h3>
+                <div class="company-period">
+                    <span class="company">Nokia</span>
+                    <span class="period">May 2022 - September 2022</span>
+                </div>
+                <p>Rollout Manager for Mwingz Project</p>
+                <ul class="responsibilities">
+                    <li>Orchestrating comprehensive end-to-end site management throughout the entire SWAP lifecycle</li>
+                    <li>Ensuring successful cluster migration within established project timelines and quality parameters</li>
+                    <li>Serving as the primary interface between operational teams and project stakeholders</li>
+                    <li>Implementing proactive risk management strategies to mitigate potential deployment challenges</li>
+                </ul>
+            </div>
+            
+            <div class="experience-item">
+                <h3 class="job-title">GDC Permit Manager</h3>
+                <div class="company-period">
+                    <span class="company">Nokia</span>
+                    <span class="period">May 2021 - May 2022</span>
+                </div>
+                <p>Nokia UK BT Project</p>
+                <ul class="responsibilities">
+                    <li>Overseeing the comprehensive permit acquisition process from initiation to final approval</li>
+                    <li>Facilitating critical field operations by ensuring timely permit authorization</li>
+                    <li>Managing high-volume stakeholder communications through professional correspondence</li>
+                    <li>Implementing efficient documentation workflows to streamline the approval process</li>
+                </ul>
+            </div>
+            
+            <div class="experience-item">
+                <h3 class="job-title">Network Engineer</h3>
+                <div class="company-period">
+                    <span class="company">Vodafone</span>
+                    <span class="period">March 2020 - May 2021</span>
+                </div>
+                <p>Vodafone UK Project ‐ 1st Line Atlantic Network Operation Center (ANOC) UK TX</p>
+                <ul class="responsibilities">
+                    <li>Proactive network monitoring and advanced troubleshooting of transmission infrastructure</li>
+                    <li>Comprehensive alarm analysis and resolution through remote diagnostics</li>
+                    <li>Cross-functional collaboration with field engineering teams to ensure network integrity</li>
+                    <li>Expert management of the transmission path between cell sites and controllers (BSC, RNC)</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">Skills</h2>
+            
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Personal Skills</h3>
+                    
+                    <div class="skill-item">
+                        <span class="skill-name">Proactive</span>
+                        <div class="skill-level">
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot empty"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <span class="skill-name">Autonomous</span>
+                        <div class="skill-level">
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot empty"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <span class="skill-name">Assiduous</span>
+                        <div class="skill-level">
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <span class="skill-name">Punctual</span>
+                        <div class="skill-level">
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>Professional Skills</h3>
+                    
+                    <div class="skill-item">
+                        <span class="skill-name">HTML</span>
+                        <div class="skill-level">
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <span class="skill-name">CSS</span>
+                        <div class="skill-level">
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot empty"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <span class="skill-name">Bootstrap</span>
+                        <div class="skill-level">
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot empty"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <span class="skill-name">SQL</span>
+                        <div class="skill-level">
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot empty"></span>
+                            <span class="dot empty"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2 class="section-title">Tools & Technologies</h2>
+            
+            <div class="tools-list">
+                <span class="tool-item">Jira</span>
+                <span class="tool-item">Git</span>
+                <span class="tool-item">GitHub</span>
+                <span class="tool-item">HTML5</span>
+                <span class="tool-item">CSS3</span>
+                <span class="tool-item">JavaScript</span>
+                <span class="tool-item">Bootstrap</span>
+                <span class="tool-item">SQL</span>
+                <span class="tool-item">OSS</span>
+                <span class="tool-item">Networks</span>
+                <span class="tool-item">VSCode</span>
+            </div>
+        </div>
+        
+        <div class="footer">
+            This CV was generated on February 26, 2025. For more information, please visit my portfolio website.
+        </div>
+    </div>
+</body>
+</html>

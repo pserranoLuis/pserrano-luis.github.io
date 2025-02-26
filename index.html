@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfólio profissional de Luis Serrano - OSS Engineer especializado em sistemas de suporte operacional para telecomunicações">
+    <meta name="keywords" content="desenvolvedor web, portfólio, OSS, engenheiro, telecomunicações, Nokia">
+    <meta name="author" content="Luis Serrano">
+    <meta property="og:title" content="Portfólio de Luis Serrano | OSS Engineer">
+    <meta property="og:description" content="Confira meus projetos e habilidades como OSS Engineer.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="[URL do seu site quando estiver hospedado]">
+    <meta property="og:image" content="[URL para uma imagem representativa do seu site]">
+    <title>Luis Serrano | OSS Engineer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/print.css" media="print">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="icon" href="img/favicon.png" type="image/png">
+
+</head>
+<body>
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
+    
+    <!-- Floating Dark Mode Button -->
+    <button id="floating-dark-mode" class="floating-dark-mode" aria-label="Alternar modo escuro">
+        <i class="fas fa-moon"></i>
+    </button>
+
+        <!-- Header with Navigation (Remove Dark Mode Toggle) -->
+    <header id="header">
+        <nav class="navbar">
+            <div class="container">
+                <a href="#intro">
+                    <img src="img/logo.png" alt="Luis Serrano Logo" class="logo-img light-version">
+                    <img src="img/logolight.png" alt="Luis Serrano Logo" class="logo-img dark-version">
+                </a>
+                <ul class="nav-menu">
+                    <li><a href="#intro" class="nav-link">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#skills" class="nav-link">Skills</a></li>
+                    <li><a href="#tools" class="nav-link">Tools</a></li>
+                    <li><a href="#recommendations" class="nav-link">Recommendations</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                 <!-- Botão de download do CV -->
+                <a href="#" id="download-cv" class="nav-download-btn">
+                    <i class="fas fa-download"></i> CV
+                </a>
+                <div class="menu-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <main>
+        <!-- Intro Section -->
+        <section id="intro" class="section">
+            <div class="container">
+                <div class="intro-card">
+                    <div class="intro-profile">
+                        <div class="profile-image-wrapper">
+                            <img src="img/luis.jpg" alt="Luis Serrano" class="profile-image">
+                        </div>
+                        <div class="profile-details">
+                            <h1 class="profile-name">Luis Serrano</h1>
+                            <h2 class="profile-title">OSS Engineer</h2>
+                            <ul class="profile-skills">
+                                <li>Implementation and maintenance of operational support systems</li>
+                                <li>Development of technical solutions for telecommunications</li>
+                                <li>Resolution of complex problems in network environments</li>
+                                <li>User Management</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">About Me</h2>
+                <div class="about-content">
+                    <div class="about-text animate-on-scroll">
+                        <p>Hello! I'm Luis, a 24-year-old professional with experience in web development and OSS engineering. I currently work at Nokia as an OSS Engineer, where I apply my technical knowledge to ensure the efficiency and quality of operational support systems.</p>
+                    </div>
+                </div>
+                
+                <!-- Interactive Timeline -->
+                <div class="timeline-container animate-on-scroll">
+                    <h3 class="timeline-title">Professional Path</h3>
+                    <div class="interactive-timeline">
+                        <div class="timeline-track">
+                            <div class="timeline-line"></div>
+                            
+                            <!-- Timeline Points -->
+                            <div class="timeline-point" data-year="2025">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-year">Present</div>
+                            </div>
+                            
+                            <div class="timeline-point" data-year="2022">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-year">2022</div>
+                            </div>
+                            
+                            <div class="timeline-point" data-year="2021">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-year">2021</div>
+                            </div>
+                            
+                            <div class="timeline-point" data-year="2020">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-year">2020</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Timeline Content -->
+                        <div class="timeline-content-container">
+                            <div class="timeline-content" id="content-2025">
+                                <h4>Nokia - OSS Engineer</h4>
+                                <p class="timeline-date">September 2022 - Now</p>
+                                <p>OSS Engineer for BT and 3Ireland Project</p>
+                                <ul class="timeline-highlights">
+                                    <li>Developing comprehensive process documentation and user guides for internal team adoption and end-user implementation</li>
+                                    <li>Executing software updates via virtual machine environments for the Vodafone Project initiative</li>
+                                    <li>Maintaining detailed documentation of internal and client meetings (BT and MBNL) through structured OneNote repositories</li>
+                                    <li>Managing system access reclamation and account updates for departed personnel across projects and Nokia organization</li>
+                                    <li>Administering compliance audits to facilitate EE's regulatory vetting requirements</li>
+                                    <li>Providing technical support for network access challenges and account provisioning issues</li>
+                                    <li>Creating standardized troubleshooting documentation to streamline common issue resolution and application access procedures</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="timeline-content" id="content-2022">
+                                <h4>Nokia - Rollout Manager</h4>
+                                <p class="timeline-date">May 2022 - September 2022</p>
+                                <p>Rollout Manager for Mwingz Project</p>
+                                <ul class="timeline-highlights">
+                                    <li>Orchestrating comprehensive end-to-end site management throughout the entire SWAP lifecycle</li>
+                                    <li>Ensuring successful cluster migration within established project timelines and quality parameters</li>
+                                    <li>Serving as the primary interface between operational teams and project stakeholders</li>
+                                    <li>Conducting thorough pre-deployment verification of critical components including TSSR/BOS documentation, crane logistics, and hardware readiness</li>
+                                    <li>Implementing proactive risk management strategies to mitigate potential deployment challenges</li>
+                                    <li>Coordinating with subcontractors to establish precise schedules for preparation, implementation, and post-SWAP activities</li>
+                                    <li>Maintaining accurate documentation through regular GDC Portal updates</li>
+                                    <li>Leading daily coordination meetings to validate site readiness for current and upcoming deployment activities</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="timeline-content" id="content-2021">
+                                <h4>Nokia - GDC Permit Manager</h4>
+                                <p class="timeline-date">May 2021 - May 2022</p>
+                                <p>Nokia UK BT Project</p>
+                                <ul class="timeline-highlights">
+                                    <li>Overseeing the comprehensive permit acquisition process from initiation to final approval</li>
+                                    <li>Facilitating critical field operations by ensuring timely permit authorization</li>
+                                    <li>Managing high-volume stakeholder communications through professional correspondence</li>
+                                    <li>Coordinating with Field Engineers to ensure regulatory compliance for on-site operations</li>
+                                    <li>Implementing efficient documentation workflows to streamline the approval process</li>
+                                    <li>Serving as the key liaison between regulatory authorities and operational teams</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="timeline-content" id="content-2020">
+                                <h4>Vodafone - Network Engineer</h4>
+                                <p class="timeline-date">March 2020 - May 2021</p>
+                                <p>Vodafone UK Project ‐ 1st Line Atlantic Network Operation Center (ANOC) UK TX</p>
+                                <ul class="timeline-highlights">
+                                    <li>Proactive network monitoring and advanced troubleshooting of transmission infrastructure</li>
+                                    <li>Comprehensive alarm analysis and resolution through remote diagnostics</li>
+                                    <li>Cross-functional collaboration with field engineering teams to ensure network integrity</li>
+                                    <li>Expert management of the transmission path between cell sites and controllers (BSC, RNC)</li>
+                                    <li>Implementation of systematic fault detection and resolution protocols to maintain optimal network performance</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Skills Section -->
+        <section id="skills" class="section">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">Skills</h2>
+                <p class="section-subtitle animate-on-scroll">Personal/Professional and other skills</p>
+                
+                <div class="skills-container">
+                    <!-- Personal Skills -->
+                    <div class="skill-category animate-on-scroll">
+                        <h3>Personal Skills</h3>
+                        <ul class="skill-list">
+                            <li class="skill-item">
+                                <div class="skill-name">
+                                    <span>Proactive</span>
+                                    <span>80%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 80%"></div>
+                                </div>
+                            </li>
+                            <li class="skill-item">
+                                <div class="skill-name">
+                                    <span>Autonomous</span>
+                                    <span>80%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 80%"></div>
+                                </div>
+                            </li>
+                            <li class="skill-item">
+                                <div class="skill-name">
+                                    <span>Assiduous</span>
+                                    <span>100%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 100%"></div>
+                                </div>
+                            </li>
+                            <li class="skill-item">
+                                <div class="skill-name">
+                                    <span>Punctual</span>
+                                    <span>100%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 100%"></div>
+                                </div>
+                            </li>
+                            <li class="skill-item">
+                                <div class="skill-name">
+                                    <span>Strong willing to learn</span>
+                                    <span>100%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 100%"></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Professional Skills -->
+                    <div class="skill-category animate-on-scroll">
+                        <h3>Professional Skills</h3>
+                        <ul class="skill-list">
+                            <li class="skill-item">
+                                <div class="skill-name">
+                                    <span>HTML</span>
+                                    <span>100%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 100%"></div>
+                                </div>
+                            </li>
+                            <li class="skill-item">
+                                <div class="skill-name">
+                                    <span>CSS</span>
+                                    <span>80%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 80%"></div>
+                                </div>
+                            </li>
+                            <li class="skill-item">
+                                <div class="skill-name">
+                                    <span>Bootstrap</span>
+                                    <span>80%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 80%"></div>
+                                </div>
+                            </li>
+                            <li class="skill-item">
+                                <div class="skill-name">
+                                    <span>SQL</span>
+                                    <span>60%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 60%"></div>
+                                </div>
+                            </li>
+                            <li class="skill-item">
+                                <div class="skill-name">
+                                    <span>Logo Design</span>
+                                    <span>75%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 75%"></div>
+                                </div>
+                            </li>
+                            <li class="skill-item">
+                                <div class="skill-name">
+                                    <span>Video Edit</span>
+                                    <span>70%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 70%"></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Other Skills -->
+                    <div class="skill-category animate-on-scroll">
+                        <h3>Other Skills</h3>
+                        <ul class="skill-list">
+                            <li class="skill-item">
+                                <div class="skill-name">
+                                    <span>UI/UX Design</span>
+                                    <span>70%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 70%"></div>
+                                </div>
+                            </li>
+                            <li class="skill-item">
+                                <div class="skill-name">
+                                    <span>Git & GitHub</span>
+                                    <span>85%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 85%"></div>
+                                </div>
+                            </li>
+                            <li class="skill-item">
+                                <div class="skill-name">
+                                    <span>Project Management</span>
+                                    <span>75%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 75%"></div>
+                                </div>
+                            </li>
+                            <li class="skill-item">
+                                <div class="skill-name">
+                                    <span>Team Player</span>
+                                    <span>100%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" style="width: 90%"></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Adicione esta seção logo após a seção de Skills -->
+        <section id="tools" class="section">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">Tools & Technologies</h2>
+                <p class="section-subtitle animate-on-scroll">Technologies and tools I've worked with</p>
+                
+                <div class="tools-container animate-on-scroll">
+                    <div class="tools-slider">
+                        <div class="tool-item">
+                            <div class="tool-icon">
+                                <i class="fa-solid fa-bell"></i>
+                            </div>
+                            <span class="tool-name">Netcool</span>
+                        </div>
+                        <div class="tool-item">
+                            <div class="tool-icon">
+                                <i class="fab fa-git-alt"></i>
+                            </div>
+                            <span class="tool-name">Git</span>
+                        </div>
+                        <div class="tool-item">
+                            <div class="tool-icon">
+                                <i class="fab fa-github"></i>
+                            </div>
+                            <span class="tool-name">GitHub</span>
+                        </div>
+                        <div class="tool-item">
+                            <div class="tool-icon">
+                                <i class="fab fa-html5"></i>
+                            </div>
+                            <span class="tool-name">HTML5</span>
+                        </div>
+                        <div class="tool-item">
+                            <div class="tool-icon">
+                                <i class="fab fa-css3-alt"></i>
+                            </div>
+                            <span class="tool-name">CSS3</span>
+                        </div>
+                        <div class="tool-item">
+                            <div class="tool-icon">
+                                <i class="fa-solid fa-camera"></i>
+                            </div>
+                            <span class="tool-name">Adobe Photoshop</span>
+                        </div>
+                        <div class="tool-item">
+                            <div class="tool-icon">
+                                <i class="fab fa-bootstrap"></i>
+                            </div>
+                            <span class="tool-name">Bootstrap</span>
+                        </div>
+                        <div class="tool-item">
+                            <div class="tool-icon">
+                                <i class="fas fa-database"></i>
+                            </div>
+                            <span class="tool-name">SQL</span>
+                        </div>
+                        <div class="tool-item">
+                            <div class="tool-icon">
+                                <i class="fa-solid fa-pen"></i>
+                            </div>
+                            <span class="tool-name">Adobe Illustrator</span>
+                        </div>
+                        <div class="tool-item">
+                            <div class="tool-icon">
+                                <i class="fas fa-server"></i>
+                            </div>
+                            <span class="tool-name">OSS</span>
+                        </div>
+                        <div class="tool-item">
+                            <div class="tool-icon">
+                                <i class="fas fa-network-wired"></i>
+                            </div>
+                            <span class="tool-name">Networks</span>
+                        </div>
+                        <div class="tool-item">
+                            <div class="tool-icon">
+                                <i class="fas fa-file-code"></i>
+                            </div>
+                            <span class="tool-name">VSCode</span>
+                        </div>
+                        
+                        <!-- Duplicação dos itens para criar efeito de loop infinito -->
+                        <div class="tool-item">
+                            <div class="tool-icon">
+                                <i class="fa-solid fa-bell"></i>
+                            </div>
+                            <span class="tool-name">Netcool</span>
+                        </div>
+                        <div class="tool-item">
+                            <div class="tool-icon">
+                                <i class="fab fa-git-alt"></i>
+                            </div>
+                            <span class="tool-name">Git</span>
+                        </div>
+                        <div class="tool-item">
+                            <div class="tool-icon">
+                                <i class="fab fa-github"></i>
+                            </div>
+                            <span class="tool-name">GitHub</span>
+                        </div>
+                        <div class="tool-item">
+                            <div class="tool-icon">
+                                <i class="fab fa-html5"></i>
+                            </div>
+                            <span class="tool-name">HTML5</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <!-- Recommendations Section -->
+        <section id="recommendations" class="section">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">Professional Recommendations</h2>
+                <p class="section-subtitle animate-on-scroll">Letters of recommendation from colleagues and supervisors</p>
+                
+                <div class="recommendation-container">
+                    <!-- Navigation buttons -->
+                    <button id="prev-recommendation" class="recommendation-nav prev">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    
+                    <!-- Recommendation cards -->
+                    <div class="recommendation-cards">
+                        <!-- Card 1 -->
+                        <div class="recommendation-card active">
+                            <div class="recommendation-header">
+                                <h3>Marius Jebelean</h3>
+                                <p class="recommender-title">Head of OSS, Nokia</p>
+                                <p class="recommender-contact">
+                                    <a href="mailto:Marius.jebelean@nokia.com">Marius.jebelean@nokia.com</a><br>
+                                    Mobile: 0040749402411
+                                </p>
+                            </div>
+                            <div class="recommendation-content">
+                                <p>Dear Company,</p>
+                                <p>I am writing to wholeheartedly recommend Luis Serrano for any endeavor in the field of Telecom Engineering. In my capacity as Head of OSS Engineering at Nokia, I have had the pleasure of working closely with Luis for 2 years, and I have consistently been impressed by his dedication, expertise, and work ethic.</p>
+                                <p>Luis is a truly hardworking individual who consistently goes above and beyond to ensure that tasks are completed to the highest standards. He approaches every project with enthusiasm and determination, tackling challenges with a positive attitude and unwavering commitment. His ability to stay focused and productive, even under pressure, is truly commendable.</p>
+                                <p>One of Luis's most admirable qualities is his punctuality and reliability. He understands the importance of meeting deadlines and consistently delivers work on time, if not ahead of schedule. His reliability is an asset to any team, providing peace of mind and ensuring that projects progress smoothly and efficiently.</p>
+                                <p>Moreover, Luis possesses a genuine thirst for knowledge and a willingness to learn new things. He actively seeks out opportunities for professional development and is quick to grasp new concepts and technologies. His curiosity and eagerness to learn not only enhance his own skill set but also contribute positively to the team dynamic, fostering an environment of continuous improvement and innovation.</p>
+                                <p>In conclusion, I have no hesitation in recommending Luis for any role or project within the field of Telecom Engineering. His exceptional work ethic, reliability, and eagerness to learn make him a valuable asset to any organization. I am confident that he will continue to excel and make significant contributions wherever he goes.</p>
+                                <p>Please feel free to contact me if you require any further information.</p>
+                                <p>Sincerely,</p>
+                            </div>
+                            <div class="recommendation-signature">
+                                <img src="img/marius.png" alt="Assinatura de Marius Jebelean" class="signature-img">
+                            </div>
+                        </div>
+                        
+                        <!-- Card 2 -->
+                        <div class="recommendation-card">
+                            <div class="recommendation-header">
+                                <h3>Marco Alves</h3>
+                                <p class="recommender-title">Service Desk Team Lead & OSS Technical Lead, Nokia</p>
+                                <p class="recommender-contact">
+                                    Telefone: +351913250501
+                                </p>
+                            </div>
+                            <div class="recommendation-content">
+                                <p>Dear person,</p>
+                                <p>I am writing to highly recommend Luis Serrano. As Team Lead at Nokia, I have had the pleasure of working closely with Luis and have been consistently impressed by his technical expertise and dedication.</p>
+                                <p>During Luis's working time at Nokia, he demonstrated exceptional proficiency in a wide range of OSS technologies and platforms. His adeptness contribution to various projects has been instrumental in enhancing our processes and overall project outcomes.</p>
+                                <p>One of Luis's standout quality was his proactive approach to problem-solving. He possesses a remarkable ability to analyze complex issues, devise innovative solutions, and implement them effectively. Whether it's troubleshooting intricate technical challenges or optimizing OSS tools for maximum efficiency, Luis consistently delivered results of the highest caliber.</p>
+                                <p>Moreover, Luis was a valuable team player who fostered collaboration and knowledge sharing within his team. His excellent communication skills and willingness to assist colleagues have greatly contributed to a positive and productive work environment.</p>
+                                <p>Beyond his technical prowess, Luis has exhibited exemplary professionalism and reliability in all his endeavors. He consistently met SLAs, took initiative in exploring technologies, and exhibited a strong sense of accountability for his work.</p>
+                                <p>In conclusion, his combination of technical expertise, problem-solving abilities, and collaborative spirit makes him an ideal candidate for any company/team. I wholeheartedly endorse Luis and am confident that he will excel in any challenges he'll undertake.</p>
+                                <p>Feel free to contact me if you require any further information regarding Luis or his qualifications. Thank you for considering this recommendation, and I eagerly anticipate the opportunity to see Luis thrive in his future endeavors.</p>
+                                <p>Sincerely,</p>
+                            </div>
+                            <div class="recommendation-signature">
+                                <div class="signature-text">Marco Alves</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button id="next-recommendation" class="recommendation-nav next">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+                
+                <!-- Indicators -->
+                <div class="recommendation-indicators">
+                    <span class="indicator active" data-index="0"></span>
+                    <span class="indicator" data-index="1"></span>
+                </div>
+            </div>
+        </section>
+        
+    
+
+
+       <!-- Contact Section - Improved -->
+        <section id="contact" class="section">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll">Contact</h2>
+                <p class="section-subtitle animate-on-scroll">Should you have any questions or wish to discuss a project proposal, please feel free to contact me at your convenience.</p>
+                
+                <div class="contact-container animate-on-scroll">
+                    <div class="contact-info">
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <h3>Email</h3>
+                                    <p>pserrano.luis@gmail.com</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <div>
+                                    <h3>Phone</h3>
+                                    <p>+351 934 355 455</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <h3>Location</h3>
+                                    <p>Porto Alto, Portugal</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contact-social">
+                            <h3>Connect With Me</h3>
+                            <div class="social-icons">
+                                <a href="https://www.linkedin.com/in/serrano-luis/" class="social-icon" target="_blank" aria-label="LinkedIn Profile"><i class="fab fa-linkedin"></i></a>
+                                <a href="https://www.instagram.com/serrano_luiis/" class="social-icon" target="_blank" aria-label="Instagram Profile"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <!-- Footer - Simplified -->
+    <footer id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Luis Serrano. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    
+
+
+    <a href="#" id="back-to-top" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script src="js/components.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/darkMode.js"></script>
+    <script src="js/backToTop.js"></script>
+    <script src="js/recommendations.js"></script>
+    <script src="js/cv.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</body>
+</html>

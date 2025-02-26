@@ -1,0 +1,239 @@
+/* print-cv.css - CSS otimizado para CV em PDF */
+@media print {
+    /* Reset e configurações gerais */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', Arial, sans-serif;
+      color: #000;
+      background-color: transparent !important;
+      box-shadow: none !important;
+    }
+    
+    /* Esconder todos os elementos do site */
+    body > * {
+      display: none !important;
+    }
+    
+    /* Mostrar apenas o conteúdo do CV */
+    #cv-print-version {
+      display: block !important;
+      width: 100%;
+      max-width: 210mm; /* Largura A4 */
+      margin: 0 auto;
+      padding: 15mm 15mm;
+      font-size: 11pt;
+      line-height: 1.4;
+    }
+    
+    /* Cabeçalho do CV */
+    .cv-header {
+      display: flex;
+      margin-bottom: 20pt;
+      border-bottom: 1pt solid #3498db;
+      padding-bottom: 15pt;
+    }
+    
+    .cv-photo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3pt solid #3498db;
+      margin-right: 20pt;
+    }
+    
+    .cv-name-title {
+      flex: 1;
+    }
+    
+    .cv-name {
+      font-size: 24pt;
+      font-weight: bold;
+      margin-bottom: 5pt;
+      color: #3498db;
+    }
+    
+    .cv-title {
+      font-size: 14pt;
+      margin-bottom: 10pt;
+      font-weight: 500;
+    }
+    
+    .cv-summary {
+      font-size: 10pt;
+      margin-bottom: 10pt;
+      line-height: 1.4;
+    }
+    
+    /* Informações de contato */
+    .cv-contact {
+      position: absolute;
+      top: 15mm;
+      right: 15mm;
+      text-align: right;
+    }
+    
+    .cv-contact-item {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      margin-bottom: 5pt;
+      font-size: 9pt;
+    }
+    
+    .cv-contact-item i {
+      margin-left: 5pt;
+      color: #3498db;
+    }
+    
+    /* Seções do CV */
+    .cv-section {
+      margin-bottom: 15pt;
+      page-break-inside: avoid;
+    }
+    
+    .cv-section-title {
+      font-size: 14pt;
+      font-weight: bold;
+      color: #3498db;
+      margin-bottom: 10pt;
+      border-bottom: 0.5pt solid #ccc;
+      padding-bottom: 3pt;
+    }
+    
+    /* Experiência */
+    .cv-experience-item {
+      margin-bottom: 12pt;
+      page-break-inside: avoid;
+    }
+    
+    .cv-job-title {
+      font-size: 12pt;
+      font-weight: bold;
+    }
+    
+    .cv-company {
+      font-size: 11pt;
+      font-weight: 500;
+    }
+    
+    .cv-period {
+      font-size: 10pt;
+      font-style: italic;
+      margin-bottom: 5pt;
+      color: #555;
+    }
+    
+    .cv-job-description {
+      font-size: 10pt;
+      margin-bottom: 5pt;
+    }
+    
+    .cv-responsibilities {
+      font-size: 10pt;
+      padding-left: 15pt;
+      margin-bottom: 5pt;
+    }
+    
+    .cv-responsibilities li {
+      margin-bottom: 3pt;
+    }
+    
+    /* Habilidades */
+    .cv-skills-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15pt;
+    }
+    
+    .cv-skill-category {
+      flex: 1 0 45%;
+    }
+    
+    .cv-skill-category-title {
+      font-size: 11pt;
+      font-weight: bold;
+      margin-bottom: 8pt;
+      color: #3498db;
+    }
+    
+    .cv-skill-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 5pt;
+    }
+    
+    .cv-skill-name {
+      font-size: 10pt;
+    }
+    
+    .cv-skill-level {
+      display: flex;
+      align-items: center;
+    }
+    
+    .cv-skill-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #3498db;
+      margin-left: 3px;
+    }
+    
+    .cv-skill-dot.empty {
+      background-color: #ddd;
+    }
+    
+    /* Ferramentas e Tecnologias */
+    .cv-tools {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10pt;
+    }
+    
+    .cv-tool-item {
+      font-size: 10pt;
+      padding: 3pt 8pt;
+      background-color: #f5f5f5 !important;
+      border-radius: 15pt;
+      border: 0.5pt solid #ddd;
+    }
+    
+    /* Educação */
+    .cv-education-item {
+      margin-bottom: 10pt;
+    }
+    
+    .cv-degree {
+      font-size: 11pt;
+      font-weight: bold;
+    }
+    
+    .cv-school {
+      font-size: 10pt;
+    }
+    
+    .cv-graduation {
+      font-size: 10pt;
+      font-style: italic;
+      color: #555;
+    }
+    
+    /* Quebras de página */
+    .page-break {
+      page-break-before: always;
+    }
+    
+    /* Rodapé */
+    .cv-footer {
+      margin-top: 20pt;
+      font-size: 8pt;
+      text-align: center;
+      color: #777;
+      border-top: 0.5pt solid #ddd;
+      padding-top: 5pt;
+    }
+  }
+  

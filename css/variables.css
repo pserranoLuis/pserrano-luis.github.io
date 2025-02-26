@@ -1,0 +1,27 @@
+:root {
+    /* Cores principais */
+    --primary-color: #3498db;
+    --primary-color-light: #ebf5fb;
+    --secondary-color: #2ecc71;
+    --text-color: #333;
+    --bg-color: #f0f8ff; /* Azul muito claro para o fundo */
+    --light-gray: #f4f4f4;
+    
+    /* Tamanhos de fonte */
+    --font-small: 0.875rem;
+    --font-normal: 1rem;
+    --font-medium: 1.25rem;
+    --font-large: 1.5rem;
+    --font-xlarge: 2.5rem;
+    
+    /* Espaçamentos */
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 2rem;
+    --space-lg: 3rem;
+    --space-xl: 5rem;
+    
+    /* Fontes */
+    --font-primary: 'Poppins', sans-serif;
+    --font-secondary: 'Roboto', sans-serif;
+}
