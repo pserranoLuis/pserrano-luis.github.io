@@ -1,267 +1,104 @@
 /**
- * darkMode.js - Gerencia a funcionalidade de modo escuro/claro
+ * darkMode.js - Sistema de modo escuro simplificado
  */
 
-// Função auto-executável para evitar poluir o escopo global
+// Executar imediatamente quando o script é carregado
 (function() {
-    // Função para alternar o modo escuro
-    function toggleDarkMode() {
+  // Função para inicializar o modo escuro
+  function initDarkMode() {
+      console.log('Inicializando modo escuro...');
+      
+      // Elementos
+      const darkModeToggle = document.getElementById('floating-dark-mode');
       const body = document.body;
       
-      // Verificar o estado atual
-      const isDarkMode = body.classList.contains('dark-mode');
-      
-      if (isDarkMode) {
-        // Mudar para modo claro
-        body.classList.remove('dark-mode');
-        localStorage.setItem('darkMode', 'false');
-        applyLightMode();
-      } else {
-        // Mudar para modo escuro
-        body.classList.add('dark-mode');
-        localStorage.setItem('darkMode', 'true');
-        applyDarkMode();
-      }
-    }
-    
-    // Função para aplicar estilos do modo escuro
-    function applyDarkMode() {
-      // Aplicar cores escuras às seções
-      const sections = document.querySelectorAll('section');
-      sections.forEach((section, index) => {
-        if (index % 2 === 0) {
-          section.style.backgroundColor = '#121212';
-        } else {
-          section.style.backgroundColor = '#1a1a1a';
-        }
-      });
-      
-      // Cores específicas para seções especiais
-      const introSection = document.getElementById('intro');
-      if (introSection) {
-        introSection.style.backgroundColor = '#0d1117';
-        introSection.style.backgroundImage = 'linear-gradient(135deg, #0d1117 0%, #161b22 100%)';
+      // Verificar se o botão existe
+      if (!darkModeToggle) {
+          console.error('Botão de modo escuro não encontrado!');
+          return;
       }
       
-      const contactSection = document.getElementById('contact');
-      if (contactSection) {
-        contactSection.style.backgroundColor = '#0d1117';
-        contactSection.style.backgroundImage = 'linear-gradient(135deg, #0d1117 0%, #161b22 100%)';
+      console.log('Botão de modo escuro encontrado:', darkModeToggle);
+      
+      // Verificar preferência salva
+      const savedDarkMode = localStorage.getItem('darkMode');
+      console.log('Preferência salva:', savedDarkMode);
+      
+      // Aplicar modo escuro se estiver salvo
+      if (savedDarkMode === 'true') {
+          console.log('Aplicando modo escuro...');
+          body.classList.add('dark-mode');
+          updateIcon(true);
       }
       
-      // Corrigir a timeline
-      fixTimelineForDarkMode();
-    }
-    
-    // Função para aplicar estilos do modo claro
-    function applyLightMode() {
-      // Aplicar cores claras às seções
-      const sections = document.querySelectorAll('section');
-      sections.forEach((section, index) => {
-        if (index % 2 === 0) {
-          section.style.backgroundColor = '#f0f8ff';
-        } else {
-          section.style.backgroundColor = '#ffffff';
-        }
-      });
-      
-      // Cores específicas para seções especiais
-      const introSection = document.getElementById('intro');
-      if (introSection) {
-        introSection.style.backgroundColor = '#ebf5fb';
-        introSection.style.backgroundImage = 'linear-gradient(135deg, #ebf5fb 0%, #d6eaf8 100%)';
+      // Função para alternar modo escuro
+      function toggleDarkMode() {
+          console.log('Alternando modo escuro...');
+          if (body.classList.contains('dark-mode')) {
+              body.classList.remove('dark-mode');
+              localStorage.setItem('darkMode', 'false');
+              updateIcon(false);
+              console.log('Modo escuro desativado');
+          } else {
+              body.classList.add('dark-mode');
+              localStorage.setItem('darkMode', 'true');
+              updateIcon(true);
+              console.log('Modo escuro ativado');
+          }
       }
       
-      const contactSection = document.getElementById('contact');
-      if (contactSection) {
-        contactSection.style.backgroundColor = '#e8f4f8';
-        contactSection.style.backgroundImage = 'linear-gradient(135deg, #e8f4f8 0%, #d6eaf8 100%)';
+      // Função para atualizar o ícone
+      function updateIcon(isDark) {
+          const icon = darkModeToggle.querySelector('i');
+          if (!icon) {
+              console.error('Ícone não encontrado no botão de modo escuro');
+              return;
+          }
+          
+          if (isDark) {
+              icon.classList.remove('fa-moon');
+              icon.classList.add('fa-sun');
+          } else {
+              icon.classList.remove('fa-sun');
+              icon.classList.add('fa-moon');
+          }
       }
       
-      // Corrigir a timeline
-      fixTimelineForLightMode();
-    }
-    
-    // Função para corrigir a timeline no modo escuro
-    function fixTimelineForDarkMode() {
-      // Obter o container da timeline
-      const timelineContainer = document.querySelector('.timeline-content-container');
-      if (timelineContainer) {
-        timelineContainer.style.backgroundColor = '#1e1e1e';
-        timelineContainer.style.color = '#ffffff';
-        timelineContainer.style.border = '1px solid #333';
-        timelineContainer.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.5)';
-      }
-      
-      // Obter o conteúdo ativo da timeline
-      const activeContent = document.querySelector('.timeline-content.active');
-      if (activeContent) {
-        // Garantir que o conteúdo está visível
-        activeContent.style.display = 'block';
-        
-        // Aplicar cores a todos os elementos de texto
-        const textElements = activeContent.querySelectorAll('h1, h2, h3, h4, p, li, span, a, div');
-        textElements.forEach(el => {
-          el.style.color = '#ffffff';
-        });
-      }
-    }
-    
-    // Função para corrigir a timeline no modo claro
-    function fixTimelineForLightMode() {
-      // Obter o container da timeline
-      const timelineContainer = document.querySelector('.timeline-content-container');
-      if (timelineContainer) {
-        timelineContainer.style.backgroundColor = '#ffffff';
-        timelineContainer.style.color = '#333333';
-        timelineContainer.style.border = '1px solid #e0e0e0';
-        timelineContainer.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
-      }
-      
-      // Obter o conteúdo ativo da timeline
-      const activeContent = document.querySelector('.timeline-content.active');
-      if (activeContent) {
-        // Garantir que o conteúdo está visível
-        activeContent.style.display = 'block';
-        
-        // Aplicar cores a todos os elementos de texto
-        const textElements = activeContent.querySelectorAll('h1, h2, h3, h4, p, li, span, a, div');
-        textElements.forEach(el => {
-          el.style.color = '#333333';
-        });
-      }
-    }
-    
-    // Função para configurar os pontos da timeline
-    function setupTimelinePoints() {
-      const timelinePoints = document.querySelectorAll('.timeline-point');
-      
-      timelinePoints.forEach(point => {
-        point.addEventListener('click', function() {
-          // Pequeno atraso para garantir que o conteúdo foi atualizado
-          setTimeout(() => {
-            // Verificar se estamos no modo escuro ou claro
-            if (document.body.classList.contains('dark-mode')) {
-              fixTimelineForDarkMode();
-            } else {
-              fixTimelineForLightMode();
-            }
-          }, 50);
-        });
-      });
-    }
-    
-    // Função para inicializar o modo escuro
-    function initDarkMode() {
-      // Verificar preferência salva no localStorage
-      const savedDarkMode = localStorage.getItem('darkMode') === 'true';
-      
-      // Aplicar modo escuro se salvo
-      if (savedDarkMode) {
-        document.body.classList.add('dark-mode');
-        setTimeout(applyDarkMode, 100);
-      } else {
-        setTimeout(applyLightMode, 100);
-      }
-      
-      // Encontrar o botão de modo escuro
-      const darkModeToggle = document.getElementById('dark-mode-toggle');
-      const darkModeButton = document.querySelector('.floating-dark-mode');
-      
-      // Configurar o botão de toggle (checkbox)
-      if (darkModeToggle) {
-        darkModeToggle.checked = savedDarkMode;
-        darkModeToggle.addEventListener('change', toggleDarkMode);
-      }
-      
-      // Configurar o botão flutuante
-      if (darkModeButton) {
-        darkModeButton.addEventListener('click', toggleDarkMode);
-      }
-      
-      // Adicionar atalho de teclado (Shift + D)
-      document.addEventListener('keydown', function(e) {
-        if (e.shiftKey && e.key === 'D') {
+      // Adicionar evento de clique ao botão
+      darkModeToggle.addEventListener('click', function(e) {
+          e.preventDefault();
+          console.log('Botão de modo escuro clicado');
           toggleDarkMode();
-        }
       });
       
-      // Configurar os pontos da timeline
-      setupTimelinePoints();
+      // Adicionar atalho de teclado
+      document.addEventListener('keydown', function(e) {
+          if (e.shiftKey && (e.key === 'D' || e.key === 'd')) {
+              console.log('Atalho de teclado para modo escuro detectado');
+              toggleDarkMode();
+          }
+      });
       
-      // Verificar periodicamente a timeline
-      setInterval(() => {
-        if (document.body.classList.contains('dark-mode')) {
-          fixTimelineForDarkMode();
-        } else {
-          fixTimelineForLightMode();
-        }
-      }, 2000);
-    }
-    
-    // Inicializar quando o DOM estiver pronto
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', initDarkMode);
-    } else {
-      initDarkMode();
-    }
-    
-    // Adicionar CSS personalizado
-    const style = document.createElement('style');
-    style.textContent = `
-      /* Estilos para o modo escuro */
-      body.dark-mode .timeline-content-container {
-        background-color: #1e1e1e !important;
-        color: #ffffff !important;
-        border: 1px solid #333 !important;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5) !important;
-      }
-      
-      body.dark-mode .timeline-content {
-        background-color: #1e1e1e !important;
-      }
-      
-      body.dark-mode .timeline-content h1,
-      body.dark-mode .timeline-content h2,
-      body.dark-mode .timeline-content h3,
-      body.dark-mode .timeline-content h4,
-      body.dark-mode .timeline-content p,
-      body.dark-mode .timeline-content span,
-      body.dark-mode .timeline-content li,
-      body.dark-mode .timeline-content a,
-      body.dark-mode .timeline-content div {
-        color: #ffffff !important;
-      }
-      
-      /* Estilos para o modo claro */
-      body:not(.dark-mode) .timeline-content-container {
-        background-color: #ffffff !important;
-        color: #333333 !important;
-        border: 1px solid #e0e0e0 !important;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1) !important;
-      }
-      
-      body:not(.dark-mode) .timeline-content {
-        background-color: #ffffff !important;
-      }
-      
-      body:not(.dark-mode) .timeline-content h1,
-      body:not(.dark-mode) .timeline-content h2,
-      body:not(.dark-mode) .timeline-content h3,
-      body:not(.dark-mode) .timeline-content h4,
-      body:not(.dark-mode) .timeline-content p,
-      body:not(.dark-mode) .timeline-content span,
-      body:not(.dark-mode) .timeline-content li,
-      body:not(.dark-mode) .timeline-content a,
-      body:not(.dark-mode) .timeline-content div {
-        color: #333333 !important;
-      }
-      
-      /* Garantir que o conteúdo ativo seja visível */
-      .timeline-content.active {
-        display: block !important;
-      }
-    `;
-    document.head.appendChild(style);
-  })();
+      console.log('Inicialização do modo escuro concluída');
+  }
   
+  // Verificar se o DOM já está carregado
+  if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initDarkMode);
+  } else {
+      initDarkMode();
+  }
+  
+  // Adicionar também ao evento load para garantir
+  window.addEventListener('load', function() {
+      console.log('Evento load acionado, verificando modo escuro...');
+      const darkModeToggle = document.getElementById('floating-dark-mode');
+      if (darkModeToggle && localStorage.getItem('darkMode') === 'true') {
+          const icon = darkModeToggle.querySelector('i');
+          if (icon) {
+              icon.classList.remove('fa-moon');
+              icon.classList.add('fa-sun');
+          }
+      }
+  });
+})();
