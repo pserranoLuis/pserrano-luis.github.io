@@ -18,7 +18,56 @@
     <link rel="stylesheet" href="css/print.css" media="print">
     <link rel="stylesheet" href="css/main.css">
     <link rel="icon" href="img/favicon.png" type="image/png">
-
+    <style>
+        /* Estilos essenciais para o modo escuro */
+        body.dark-mode {
+            background-color: #121212 !important;
+            color: #ffffff !important;
+        }
+        
+        body.dark-mode section {
+            background-color: #121212 !important;
+        }
+        
+        body.dark-mode h1, 
+        body.dark-mode h2, 
+        body.dark-mode h3, 
+        body.dark-mode h4, 
+        body.dark-mode h5, 
+        body.dark-mode h6, 
+        body.dark-mode p, 
+        body.dark-mode li,
+        body.dark-mode .section-title,
+        body.dark-mode .section-subtitle {
+            color: #ffffff !important;
+        }
+        
+        body.dark-mode .navbar {
+            background-color: #1a1a1a !important;
+        }
+        
+        body.dark-mode .nav-menu {
+            background-color: #1a1a1a !important;
+        }
+        
+        body.dark-mode .nav-link {
+            color: #ffffff !important;
+        }
+        
+        body.dark-mode .menu-toggle .bar {
+            background-color: #ffffff !important;
+        }
+        
+        body.dark-mode .intro-card,
+        body.dark-mode .skill-category,
+        body.dark-mode .timeline-content-container,
+        body.dark-mode .recommendation-card,
+        body.dark-mode .contact-container {
+            background-color: #1e1e1e !important;
+            border-color: #444 !important;
+        }
+    </style>
+    
 </head>
 <body>
     <div id="preloader">
@@ -611,6 +660,95 @@
     <script src="js/backToTop.js"></script>
     <script src="js/recommendations.js"></script>
     <script src="js/cv.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <!-- Script de modo escuro inline -->
+<script>
+    (function() {
+        // Verificar se o botão existe
+        const darkModeBtn = document.querySelector('.floating-dark-mode');
+        if (!darkModeBtn) {
+            console.error('Botão de modo escuro não encontrado');
+            return;
+        }
+        
+        // Verificar localStorage
+        const isDarkMode = localStorage.getItem('darkMode') === 'true';
+        
+        // Aplicar modo escuro se salvo
+        if (isDarkMode) {
+            document.body.classList.add('dark-mode');
+            const icon = darkModeBtn.querySelector('i');
+            if (icon) {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            }
+        }
+        
+        // Adicionar evento de clique
+        darkModeBtn.addEventListener('click', function() {
+            document.body.classList.toggle('dark-mode');
+            const isDark = document.body.classList.contains('dark-mode');
+            localStorage.setItem('darkMode', isDark ? 'true' : 'false');
+            
+            // Alterar ícone
+            const icon = this.querySelector('i');
+            if (icon) {
+                if (isDark) {
+                    icon.classList.remove('fa-moon');
+                    icon.classList.add('fa-sun');
+                } else {
+                    icon.classList.remove('fa-sun');
+                    icon.classList.add('fa-moon');
+                }
+            }
+            
+            // Aplicar estilos específicos no modo escuro
+            if (isDark) {
+                // Garantir que todos os textos sejam brancos
+                document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, li, span, a:not(.btn)').forEach(el => {
+                    el.style.color = '#ffffff';
+                });
+                
+                // Garantir que todas as seções tenham fundo escuro
+                document.querySelectorAll('section').forEach(section => {
+                    section.style.backgroundColor = '#121212';
+                });
+                
+                // Ajustar navbar
+                const navbar = document.querySelector('.navbar');
+                if (navbar) navbar.style.backgroundColor = '#1a1a1a';
+                
+                // Ajustar menu móvel
+                const navMenu = document.querySelector('.nav-menu');
+                if (navMenu) navMenu.style.backgroundColor = '#1a1a1a';
+                
+                // Ajustar barras do menu
+                document.querySelectorAll('.menu-toggle .bar').forEach(bar => {
+                    bar.style.backgroundColor = '#ffffff';
+                });
+            } else {
+                // Restaurar cores originais
+                document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, li, span, a:not(.btn)').forEach(el => {
+                    el.style.color = '';
+                });
+                
+                document.querySelectorAll('section').forEach(section => {
+                    section.style.backgroundColor = '';
+                });
+                
+                const navbar = document.querySelector('.navbar');
+                if (navbar) navbar.style.backgroundColor = '';
+                
+                const navMenu = document.querySelector('.nav-menu');
+                if (navMenu) navMenu.style.backgroundColor = '';
+                
+                document.querySelectorAll('.menu-toggle .bar').forEach(bar => {
+                    bar.style.backgroundColor = '';
+                });
+            }
+        });
+    })();
+</script>
+
 </body>
 </html>
